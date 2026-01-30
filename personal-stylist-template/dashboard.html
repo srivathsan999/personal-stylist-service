@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTIGRAVITY | Dashboard</title>
+    <meta name="description" content="Manage your style profile and create personalized lookbooks.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Grid -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .dashboard-container {
+            padding: 8rem 0 4rem;
+            min-height: 100vh;
+        }
+
+        .dashboard-sidebar {
+            background: var(--color-surface);
+            border-radius: 12px;
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .dashboard-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-nav-item:hover,
+        .dashboard-nav-item.active {
+            background: var(--color-accent);
+            color: #fff;
+        }
+
+        .dashboard-nav-item i {
+            font-size: 1.25rem;
+            width: 24px;
+        }
+
+        .dashboard-content {
+            background: var(--color-surface);
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--color-accent);
+        }
+
+        .profile-info h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            color: var(--color-subtext);
+            margin: 0;
+        }
+
+        .style-profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-card {
+            background: var(--color-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .profile-card h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-subtext);
+            margin-bottom: 1rem;
+        }
+
+        .profile-card .value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--color-border);
+        }
+
+        .lookbook-builder {
+            margin-top: 3rem;
+        }
+
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .lookbook-item {
+            position: relative;
+            aspect-ratio: 3/4;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .lookbook-item:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .lookbook-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lookbook-item.selected {
+            border-color: var(--color-accent);
+        }
+
+        .lookbook-item.selected::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--color-accent);
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        .lookbook-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg);
+            color: var(--color-primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--color-accent);
+            color: #fff;
+            border-color: var(--color-accent);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--color-accent), #D4AF37);
+            padding: 2rem;
+            border-radius: 12px;
+            color: #fff;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .stat-card p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .section-divider {
+            margin: 3rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 968px) {
+            .dashboard-sidebar {
+                position: relative;
+                top: 0;
+                margin-bottom: 2rem;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                ANTIGRAVITY.
+            </a>
+
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 (Default)</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 (Cover)</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+                    <div class="dashboard-sidebar">
+                        <a href="#profile" class="dashboard-nav-item active">
+                            <i class="fas fa-user"></i>
+                            <span>Style Profile</span>
+                        </a>
+                        <a href="#lookbook" class="dashboard-nav-item">
+                            <i class="fas fa-images"></i>
+                            <span>Lookbook Builder</span>
+                        </a>
+                        <a href="#appointments" class="dashboard-nav-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Appointments</span>
+                        </a>
+                        <a href="#wardrobe" class="dashboard-nav-item">
+                            <i class="fas fa-tshirt"></i>
+                            <span>My Wardrobe</span>
+                        </a>
+                        <a href="#settings" class="dashboard-nav-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="dashboard-content">
+                        <!-- Profile Header -->
+                        <div class="profile-header">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                                alt="Profile" class="profile-avatar">
+                            <div class="profile-info">
+                                <h2>Jessica Martinez</h2>
+                                <p>Member since January 2024 • Premium Client</p>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3>24</h3>
+                                <p>Lookbooks Created</p>
+                            </div>
+                            <div class="stat-card" style="background: linear-gradient(135deg, #8B7355, #BFA37A);">
+                                <h3>8</h3>
+                                <p>Styling Sessions</p>
+                            </div>
+                            <div class="stat-card" style="background: linear-gradient(135deg, #D4AF37, #BFA37A);">
+                                <h3>156</h3>
+                                <p>Wardrobe Items</p>
+                            </div>
+                        </div>
+
+                        <!-- Style Profile Section -->
+                        <section id="profile">
+                            <h3 style="margin-bottom: 2rem;">Your Style Profile</h3>
+
+                            <div class="style-profile-grid">
+                                <div class="profile-card">
+                                    <h4>Style Preference</h4>
+                                    <div class="value">Modern Minimalist</div>
+                                </div>
+
+                                <div class="profile-card">
+                                    <h4>Body Type</h4>
+                                    <div class="value">Hourglass</div>
+                                </div>
+
+                                <div class="profile-card">
+                                    <h4>Preferred Fit</h4>
+                                    <div class="value">Tailored</div>
+                                </div>
+
+                                <div class="profile-card">
+                                    <h4>Budget Range</h4>
+                                    <div class="value">Premium</div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card" style="margin-bottom: 2rem;">
+                                <h4>Color Palette</h4>
+                                <div class="color-palette">
+                                    <div class="color-swatch" style="background: #1A1A1A;"></div>
+                                    <div class="color-swatch" style="background: #FFFFFF;"></div>
+                                    <div class="color-swatch" style="background: #BFA37A;"></div>
+                                    <div class="color-swatch" style="background: #2C3E50;"></div>
+                                    <div class="color-swatch" style="background: #E8DCC8;"></div>
+                                    <div class="color-swatch" style="background: #8B7355;"></div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <h4>Style Goals</h4>
+                                <div class="value" style="font-weight: 400; line-height: 1.7;">
+                                    Build a versatile capsule wardrobe for professional settings while maintaining
+                                    personal style. Focus on timeless pieces that can transition from office to evening
+                                    events.
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="section-divider"></div>
+
+                        <!-- Lookbook Builder Section -->
+                        <section id="lookbook" class="lookbook-builder">
+                            <h3 style="margin-bottom: 1rem;">Lookbook Builder</h3>
+                            <p style="color: var(--color-subtext); margin-bottom: 2rem;">Create and save your favorite
+                                outfit combinations</p>
+
+                            <div class="lookbook-controls">
+                                <button class="filter-btn active">All</button>
+                                <button class="filter-btn">Casual</button>
+                                <button class="filter-btn">Business</button>
+                                <button class="filter-btn">Evening</button>
+                                <button class="filter-btn">Weekend</button>
+                                <button class="btn btn-primary" style="margin-left: auto;">
+                                    <i class="fas fa-plus"></i> Create New Lookbook
+                                </button>
+                            </div>
+
+                            <div class="lookbook-grid">
+                                <div class="lookbook-item selected">
+                                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 1">
+                                </div>
+                                <div class="lookbook-item">
+                                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 2">
+                                </div>
+                                <div class="lookbook-item selected">
+                                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 3">
+                                </div>
+                                <div class="lookbook-item">
+                                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 4">
+                                </div>
+                                <div class="lookbook-item">
+                                    <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 5">
+                                </div>
+                                <div class="lookbook-item selected">
+                                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 6">
+                                </div>
+                                <div class="lookbook-item">
+                                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 7">
+                                </div>
+                                <div class="lookbook-item">
+                                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Outfit 8">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="index.html" class="brand" style="color: #fff; display: flex; margin-bottom: 1rem;">
+                        <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                        ANTIGRAVITY.
+                    </a>
+                    <p style="color: #9CA3AF; max-width: 300px;">
+                        Elevating personal style through expert consulting. We help you look the part so you can focus
+                        on playing it.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Personal Shopping</a></li>
+                        <li><a href="services.html">Wardrobe Detox</a></li>
+                        <li><a href="services.html">Event Styling</a></li>
+                        <li><a href="services.html">Corporate Image</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p style="color: #9CA3AF; font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to our weekly fashion
+                        digest.</p>
+                    <form style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Your email"
+                            style="padding: 0.75rem; border: 1px solid #333; background: #151A25; color: #fff; flex: 1; border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1rem;">Sub</button>
+                    </form>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid #1F2937; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.85rem;">
+                &copy; 2025 Antigravity Stylist Template. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Dashboard Scripts -->
+    <script>
+        // Lookbook item selection
+        document.querySelectorAll('.lookbook-item').forEach(item => {
+            item.addEventListener('click', function () {
+                this.classList.toggle('selected');
+            });
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Sidebar navigation
+        document.querySelectorAll('.dashboard-nav-item').forEach(item => {
+            item.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelectorAll('.dashboard-nav-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

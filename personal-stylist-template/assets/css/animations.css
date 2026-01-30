@@ -1,0 +1,70 @@
+/* 
+ * ANTIGRAVITY - Personal Stylist Template
+ * Animations & Keyframes
+ */
+
+/* Fade In Up */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger Delay Utility */
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+.delay-400 {
+    transition-delay: 400ms;
+}
+
+.delay-500 {
+    transition-delay: 500ms;
+}
+
+/* Pulse Glow (for buttons or accents) */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(191, 163, 122, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(191, 163, 122, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(191, 163, 122, 0);
+    }
+}
+
+.pulse {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Image Zoom on Scroll (helper class) */
+.img-zoom-container {
+    overflow: hidden;
+}
+
+.img-zoom {
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.img-zoom:hover {
+    transform: scale(1.05);
+    /* Slight manual hover */
+}

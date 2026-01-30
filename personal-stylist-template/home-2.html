@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTIGRAVITY | Home 2 - Personal Stylist</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Home 2 Redesigned Hero */
+        .hero-modern {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: var(--color-bg);
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+        }
+
+        /* Animated Background Elements */
+        .hero-bg-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-bg-decoration::before,
+        .hero-bg-decoration::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            animation: heroFloat 25s infinite ease-in-out;
+        }
+
+        .hero-bg-decoration::before {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #BFA37A, #D4AF37);
+            top: -10%;
+            right: -10%;
+            animation-delay: 0s;
+        }
+
+        .hero-bg-decoration::after {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #8B7355, #BFA37A);
+            bottom: -10%;
+            left: -5%;
+            animation-delay: 12s;
+        }
+
+        @keyframes heroFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-30px, 30px) scale(0.9);
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: linear-gradient(135deg, rgba(191, 163, 122, 0.15), rgba(212, 175, 55, 0.15));
+            border: 1px solid var(--color-accent);
+            border-radius: 50px;
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--color-subtext);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .hero-stat-item {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            font-family: var(--font-heading);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--color-subtext);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-image-section {
+            position: relative;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .hero-image-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .hero-image-card.large {
+            grid-row: span 2;
+        }
+
+        .hero-image-card.large img {
+            height: 600px;
+        }
+
+        .hero-image-card.small img {
+            height: 285px;
+        }
+
+        .hero-floating-badge {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            z-index: 3;
+            animation: floatBadge 3s infinite ease-in-out;
+        }
+
+        [data-theme="dark"] .hero-floating-badge {
+            background: rgba(18, 22, 32, 0.95);
+        }
+
+        @keyframes floatBadge {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hero-floating-badge .badge-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-accent), #D4AF37);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-floating-badge h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--color-primary);
+        }
+
+        .hero-floating-badge p {
+            font-size: 0.8rem;
+            color: var(--color-subtext);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image-card.large img,
+            .hero-image-card.small img {
+                height: 400px;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .hero-floating-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-accordion {
+            width: 100%;
+        }
+
+        .faq-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 12px rgba(191, 163, 122, 0.1);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--color-bg);
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            flex: 1;
+            padding-right: 1rem;
+        }
+
+        .faq-icon {
+            color: var(--color-accent);
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: var(--color-subtext);
+            line-height: 1.7;
+        }
+
+        .faq-item.active {
+            border-color: var(--color-accent);
+            background: var(--color-bg);
+        }
+
+        .faq-item.active .faq-question {
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar (Same as Index) -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                ANTIGRAVITY.
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 (Default)</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 (Cover)</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Redesigned Hero Section -->
+    <header class="hero-modern">
+        <div class="hero-bg-decoration"></div>
+
+        <div class="hero-content-wrapper">
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Left: Text Content -->
+                    <div class="hero-text">
+                        <span class="hero-badge">
+                            <i class="fas fa-star" style="margin-right: 0.5rem;"></i>
+                            Premium Styling Services
+                        </span>
+
+                        <h1>Transform Your Image, Elevate Your Presence</h1>
+
+                        <p>Discover the power of personal style with expert guidance. From wardrobe curation to complete
+                            image transformation, we help you look and feel your absolute best.</p>
+
+                        <div class="hero-cta-group">
+                            <a href="contact.html" class="btn btn-primary">
+                                Book Free Consultation
+                            </a>
+                            <a href="portfolio.html" class="btn btn-outline">
+                                View Our Work
+                            </a>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="hero-stat-item">
+                                <div class="hero-stat-number">500+</div>
+                                <div class="hero-stat-label">Styled Clients</div>
+                            </div>
+                            <div class="hero-stat-item">
+                                <div class="hero-stat-number">10+</div>
+                                <div class="hero-stat-label">Years Experience</div>
+                            </div>
+                            <div class="hero-stat-item">
+                                <div class="hero-stat-number">98%</div>
+                                <div class="hero-stat-label">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Image Grid -->
+                    <div class="hero-image-section">
+                        <div class="hero-image-grid">
+                            <div class="hero-image-card large">
+                                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Fashion Style" loading="eager">
+                            </div>
+                            <div class="hero-image-card small">
+                                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Personal Styling" loading="eager">
+                            </div>
+                            <div class="hero-image-card small">
+                                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Wardrobe Consultation" loading="eager">
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div class="hero-floating-badge">
+                            <div class="badge-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4>Award Winning</h4>
+                            <p>Best Stylist 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Services -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card" style="text-align: center;">
+                        <i class="fas fa-gem service-icon"></i>
+                        <h3>Luxury Shopping</h3>
+                        <p>Exclusive access to high-end boutiques and private viewings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card" style="text-align: center;">
+                        <i class="fas fa-briefcase service-icon"></i>
+                        <h3>Executive Presence</h3>
+                        <p>Refine your professional image for the boardroom and beyond.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card" style="text-align: center;">
+                        <i class="fas fa-plane service-icon"></i>
+                        <h3>Travel Wardrobe</h3>
+                        <p>Curated outfits for your next getaway or business trip.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section class="section bg-surface">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Trusted By</span>
+                <h2>Our Brand Partners</h2>
+                <p>We collaborate with the world's most prestigious fashion houses</p>
+            </div>
+
+            <div class="row align-items-center" style="margin-top: 3rem;">
+                <div class="col-md-2 col-6"
+                    style="text-align: center; padding: 2rem; opacity: 0.6; transition: opacity 0.3s;">
+                    <div
+                        style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+                        GUCCI</div>
+                </div>
+                <div class="col-md-2 col-6"
+                    style="text-align: center; padding: 2rem; opacity: 0.6; transition: opacity 0.3s;">
+                    <div
+                        style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+                        PRADA</div>
+                </div>
+                <div class="col-md-2 col-6"
+                    style="text-align: center; padding: 2rem; opacity: 0.6; transition: opacity 0.3s;">
+                    <div
+                        style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+                        DIOR</div>
+                </div>
+                <div class="col-md-2 col-6"
+                    style="text-align: center; padding: 2rem; opacity: 0.6; transition: opacity 0.3s;">
+                    <div
+                        style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+                        CHANEL</div>
+                </div>
+                <div class="col-md-2 col-6"
+                    style="text-align: center; padding: 2rem; opacity: 0.6; transition: opacity 0.3s;">
+                    <div
+                        style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+                        VERSACE</div>
+                </div>
+                <div class="col-md-2 col-6"
+                    style="text-align: center; padding: 2rem; opacity: 0.6; transition: opacity 0.3s;">
+                    <div
+                        style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+                        ARMANI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Inspiration</span>
+                <h2>Style Gallery</h2>
+                <p>Explore our curated collection of looks and trends</p>
+            </div>
+
+            <div class="row" style="margin-top: 3rem;">
+                <div class="col-md-4 col-sm-6" style="margin-bottom: 2rem;">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Casual Chic" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Casual Chic</h4>
+                            <p>Effortless everyday style</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" style="margin-bottom: 2rem;">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Business Professional" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Business Professional</h4>
+                            <p>Power dressing done right</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" style="margin-bottom: 2rem;">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Evening Elegance" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Evening Elegance</h4>
+                            <p>Red carpet ready</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" style="margin-bottom: 2rem;">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Street Style" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Street Style</h4>
+                            <p>Urban edge meets sophistication</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" style="margin-bottom: 2rem;">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1467043237213-65f2da53396f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Minimalist" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Minimalist</h4>
+                            <p>Less is more</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" style="margin-bottom: 2rem;">
+                    <div class="portfolio-item">
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Bohemian" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <h4>Bohemian</h4>
+                            <p>Free-spirited fashion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section with Accordion -->
+    <section class="section bg-surface">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Questions?</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="faq-accordion" style="margin-top: 3rem;">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>How long does a typical styling session take?</h4>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>A standard styling session typically lasts 2-3 hours, depending on the service.
+                                    Wardrobe detox sessions may take 4-5 hours, while personal shopping experiences can
+                                    range from 3-6 hours based on your needs.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Do you work with specific budgets?</h4>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! We work with clients across all budget ranges. During our initial
+                                    consultation, we'll discuss your budget and create a customized plan that maximizes
+                                    value while achieving your style goals.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Can you help with virtual styling?</h4>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We offer comprehensive virtual styling services via video calls. This includes
+                                    wardrobe audits, personal shopping with online retailers, and style consultations
+                                    from anywhere in the world.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>What should I prepare for my first session?</h4>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Come with an open mind and any inspiration images you love! For wardrobe sessions,
+                                    have your closet accessible. We'll provide a detailed questionnaire beforehand to
+                                    understand your lifestyle and style preferences.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Do you offer ongoing style support?</h4>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We offer monthly retainer packages that include ongoing style advice, seasonal
+                                    wardrobe updates, and priority access to new collections. Perfect for busy
+                                    professionals who want continuous style support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Follow Us</span>
+                <h2>@antigravity.style</h2>
+                <p>Daily style inspiration and behind-the-scenes moments</p>
+            </div>
+
+            <div class="row" style="margin-top: 3rem;">
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea3c6e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" style="padding: 0.5rem;">
+                    <div
+                        style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Instagram Post"
+                            style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://instagram.com" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-instagram" style="margin-right: 0.5rem;"></i>
+                    Follow on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="index.html" class="brand" style="color: #fff; display: flex; margin-bottom: 1rem;">
+                        <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                        ANTIGRAVITY.
+                    </a>
+                    <p style="color: #9CA3AF; max-width: 300px;">
+                        Elevating personal style through expert consulting. We help you look the part so you can focus
+                        on playing it.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Personal Shopping</a></li>
+                        <li><a href="services.html">Wardrobe Detox</a></li>
+                        <li><a href="services.html">Event Styling</a></li>
+                        <li><a href="services.html">Corporate Image</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p style="color: #9CA3AF; font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to our weekly fashion
+                        digest.</p>
+                    <form style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Your email"
+                            style="padding: 0.75rem; border: 1px solid #333; background: #151A25; color: #fff; flex: 1; border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1rem;">Sub</button>
+                    </form>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid #1F2937; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.85rem;">
+                &copy; 2025 Antigravity Stylist Template. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    // Close other items
+                    const isActive = item.classList.contains('active');
+
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Open first item by default
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

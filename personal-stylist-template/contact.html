@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTIGRAVITY | Contact Us</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            /* Transparent-ish */
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            border-radius: 4px;
+            font-family: var(--font-body);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                ANTIGRAVITY.
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 (Default)</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 (Cover)</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="section bg-surface" style="padding-top: 150px; text-align: center;">
+        <div class="container">
+            <span class="section-subtitle">Get in Touch</span>
+            <h1>Start Your Journey</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--color-subtext);">Ready to transform your style?
+                Send us a message or schedule a call.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" style="margin-top: 2rem;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <input type="email" placeholder="Email Address" required>
+                        <select>
+                            <option value="">Select Service Interest</option>
+                            <option value="shopping">Personal Shopping</option>
+                            <option value="detox">Wardrobe Detox</option>
+                            <option value="styling">Event Styling</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                        <textarea rows="5" placeholder="Tell us about your style goals..." required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="col-md-1"></div>
+
+                <div class="col-md-5">
+                    <div
+                        style="background: var(--color-surface); padding: 2.5rem; border: 1px solid var(--color-border);">
+                        <h3>Contact Info</h3>
+                        <p style="margin-bottom: 2rem;">We are based in New York City but serve clients globally via
+                            virtual consultations.</p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Email</div>
+                            <a href="mailto:hello@antigravity.style" class="text-accent">hello@antigravity.style</a>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Phone</div>
+                            <a href="tel:+15550123456" class="text-accent">+1 (555) 012-3456</a>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">Studio</div>
+                            <p>123 Fashion Ave, Suite 400<br>New York, NY 10018</p>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2176356781283!2d-73.98773192426392!3d40.757974434832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1689234567890!5m2!1sen!2sus"
+                                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="index.html" class="brand"
+                        style="color: #fff; display: flex; margin-bottom: 1rem;">
+                        <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                        ANTIGRAVITY.
+                    </a>
+                    <p style="color: #9CA3AF; max-width: 300px;">
+                        Elevating personal style through expert consulting. We help you look the part so you can focus
+                        on playing it.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Personal Shopping</a></li>
+                        <li><a href="services.html">Wardrobe Detox</a></li>
+                        <li><a href="services.html">Event Styling</a></li>
+                        <li><a href="services.html">Corporate Image</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p style="color: #9CA3AF; font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to our weekly fashion
+                        digest.</p>
+                    <form style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Your email"
+                            style="padding: 0.75rem; border: 1px solid #333; background: #151A25; color: #fff; flex: 1; border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1rem;">Sub</button>
+                    </form>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid #1F2937; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.85rem;">
+                &copy; 2025 Antigravity Stylist Template. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTIGRAVITY | Journal</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                ANTIGRAVITY.
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 (Default)</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 (Cover)</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="section bg-surface" style="padding-top: 150px; text-align: center;">
+        <div class="container">
+            <span class="section-subtitle">Insights</span>
+            <h1>The Journal</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--color-subtext);">Expert advice, trend forecasts,
+                and style inspiration.</p>
+        </div>
+    </header>
+
+    <!-- Blog Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Post 1 -->
+                <div class="col-md-4 mb-5">
+                    <article class="blog-card fade-up">
+                        <a href="blog-details.html">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Fall Trends"
+                                style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
+                        </a>
+                        <div style="padding: 1.5rem 0;">
+                            <span
+                                style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent);">Trends</span>
+                            <h3 style="font-size: 1.5rem; margin-top: 0.5rem;"><a href="blog-details.html">Fall 2025:
+                                    key Pieces to Invest In</a></h3>
+                            <p style="margin-bottom: 1rem;">From oversized coats to structural boots, here is what you
+                                need for the upcoming season.</p>
+                            <a href="blog-details.html" class="text-accent">Read Article &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-md-4 mb-5">
+                    <article class="blog-card fade-up delay-100">
+                        <a href="blog-details.html">
+                            <img src="https://images.unsplash.com/photo-1550614000-4b9519e02a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
+                                alt="Capsule Wardrobe"
+                                style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
+                        </a>
+                        <div style="padding: 1.5rem 0;">
+                            <span
+                                style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent);">Guides</span>
+                            <h3 style="font-size: 1.5rem; margin-top: 0.5rem;"><a href="blog-details.html">Building a
+                                    Capsule Wardrobe</a></h3>
+                            <p style="margin-bottom: 1rem;">Simplify your life with a curated collection of versatile
+                                essentials.</p>
+                            <a href="blog-details.html" class="text-accent">Read Article &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-md-4 mb-5">
+                    <article class="blog-card fade-up delay-200">
+                        <a href="blog-details.html">
+                            <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Color Theory"
+                                style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
+                        </a>
+                        <div style="padding: 1.5rem 0;">
+                            <span
+                                style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent);">Tips</span>
+                            <h3 style="font-size: 1.5rem; margin-top: 0.5rem;"><a href="blog-details.html">Mastering
+                                    Color Theory</a></h3>
+                            <p style="margin-bottom: 1rem;">How to mix and match colors like a pro for a cohesive look.
+                            </p>
+                            <a href="blog-details.html" class="text-accent">Read Article &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem;">
+                <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem;">1</a>
+                <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; opacity: 0.5;">2</a>
+                <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; opacity: 0.5;">3</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="index.html" class="brand"
+                        style="color: #fff; display: flex; margin-bottom: 1rem;">
+                        <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                        ANTIGRAVITY.
+                    </a>
+                    <p style="color: #9CA3AF; max-width: 300px;">
+                        Elevating personal style through expert consulting. We help you look the part so you can focus
+                        on playing it.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Personal Shopping</a></li>
+                        <li><a href="services.html">Wardrobe Detox</a></li>
+                        <li><a href="services.html">Event Styling</a></li>
+                        <li><a href="services.html">Corporate Image</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p style="color: #9CA3AF; font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to our weekly fashion
+                        digest.</p>
+                    <form style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Your email"
+                            style="padding: 0.75rem; border: 1px solid #333; background: #151A25; color: #fff; flex: 1; border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1rem;">Sub</button>
+                    </form>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid #1F2937; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.85rem;">
+                &copy; 2025 Antigravity Stylist Template. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

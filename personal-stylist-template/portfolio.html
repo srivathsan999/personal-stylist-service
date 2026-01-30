@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTIGRAVITY | Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                ANTIGRAVITY.
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 (Default)</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2 (Cover)</a>
+                    </div>
+                </li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="section bg-surface" style="padding-top: 150px; text-align: center;">
+        <div class="container">
+            <span class="section-subtitle">Real Transformations</span>
+            <h1>Our Works</h1>
+            <p style="max-width: 600px; margin: 0 auto;">From editorial shoots to everyday elegance, explore how we've
+                helped our clients shine.</p>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
+                        alt="Street Style" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Street Chic</h4>
+                        <p>Urban Lifestyle Lookbook</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1627483297929-37f416fec7cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
+                        alt="Formal Wear" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Wedding Guest</h4>
+                        <p>Summer Soiree Styling</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Editorial" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Vogue September</h4>
+                        <p>Editorial Feature</p>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Headshot" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>CEO Portrait</h4>
+                        <p>Professional Branding</p>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1549488497-657743e93659?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
+                        alt="Casual Men" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Casual Friday</h4>
+                        <p>Men's Everyday Style</p>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1583846783214-7229a91b20ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=735&q=80"
+                        alt="Accessories" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Details Matter</h4>
+                        <p>Accessory Curation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-outline" style="min-width: 200px;">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="index.html" class="brand"
+                        style="color: #fff; display: flex; margin-bottom: 1rem;">
+                        <img src="assets/images/logo.png" alt="ANTIGRAVITY Logo" class="brand-logo-img">
+                        ANTIGRAVITY.
+                    </a>
+                    <p style="color: #9CA3AF; max-width: 300px;">
+                        Elevating personal style through expert consulting. We help you look the part so you can focus
+                        on playing it.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Personal Shopping</a></li>
+                        <li><a href="services.html">Wardrobe Detox</a></li>
+                        <li><a href="services.html">Event Styling</a></li>
+                        <li><a href="services.html">Corporate Image</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Newsletter</h4>
+                    <p style="color: #9CA3AF; font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to our weekly fashion
+                        digest.</p>
+                    <form style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Your email"
+                            style="padding: 0.75rem; border: 1px solid #333; background: #151A25; color: #fff; flex: 1; border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1rem;">Sub</button>
+                    </form>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid #1F2937; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.85rem;">
+                &copy; 2025 Antigravity Stylist Template. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
