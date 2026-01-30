@@ -246,6 +246,10 @@ img {
     gap: 1.5rem;
 }
 
+.mobile-nav-buttons {
+    display: none;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -325,6 +329,17 @@ img {
     border-radius: 4px;
     /* Minimal radius */
     overflow: hidden;
+    width: 85%;
+    height: 550px;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+    }
 }
 
 .hero-image img {
@@ -359,23 +374,56 @@ img {
 }
 
 /* Services Grid */
+.services-grid>[class*='col-'] {
+    display: flex;
+    align-items: stretch;
+}
+
 .service-card {
     background: var(--color-surface);
     padding: 2.5rem;
     border: 1px solid var(--color-border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 100%;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.service-card p {
+    margin-bottom: 2rem;
+    color: var(--color-subtext);
+}
+
+.pricing-features {
+    flex-grow: 1;
+}
+
+.service-card a {
+    margin-top: auto;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
     border-color: var(--color-accent);
-}
-
-.service-icon {
-    font-size: 2rem;
-    color: var(--color-accent);
-    margin-bottom: 1.5rem;
 }
 
 /* Portfolio Grid */
@@ -456,14 +504,99 @@ img {
 
 @media (max-width: 768px) {
 
-    .nav-links,
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Hidden by default */
+        height: 100vh;
+        width: 300px;
+        background: var(--color-surface);
+        flex-direction: column;
+        padding: 100px 40px;
+        z-index: 1001;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        gap: 1.5rem;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .mobile-nav-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--color-border);
+        width: 100%;
+    }
+
     .nav-right {
+        gap: 0.75rem;
+    }
+
+    .nav-right .btn {
         display: none;
-        /* Add JS toggle logic later */
+        /* Hide buttons on small screens, keep toggle */
     }
 
     .mobile-toggle {
         display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        cursor: pointer;
+        z-index: 1002;
+        order: 3;
+    }
+
+    .nav-right {
+        order: 2;
+        margin-left: auto;
+        margin-right: 1.5rem;
+    }
+
+    /* Mobile Dropdown Fix - Accordion Style */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        /* Hidden until toggled */
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        padding-left: 1rem;
+        padding-top: 0.5rem;
+        background: transparent;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .nav-link i {
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.active .nav-link i {
+        transform: rotate(180deg);
+    }
+
+    .nav-links .dropdown-item {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        color: var(--color-subtext);
     }
 
     .hero-grid {

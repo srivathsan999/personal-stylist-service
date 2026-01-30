@@ -62,4 +62,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         stagger: 0.15,
         ease: "power2.out"
     });
+
+    // Intersection Observer for .fade-up elements
+    const fadeObservers = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+        fadeObservers.observe(el);
+    });
 });

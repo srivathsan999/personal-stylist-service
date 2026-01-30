@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANTIGRAVITY | Service Details</title>
+    <title>ANTIGRAVITY | Mastering Color Theory</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -13,12 +13,10 @@
     <link rel="stylesheet" href="assets/css/dark.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar glass">
         <div class="container nav-container">
@@ -34,10 +32,10 @@
                         <a href="home-2.html" class="dropdown-item">Home 2 (Cover)</a>
                     </div>
                 </li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
             </ul>
@@ -50,62 +48,68 @@
         </div>
     </nav>
 
-    <!-- Details Hero -->
-    <header class="section" style="padding-top: 150px; padding-bottom: 3rem;">
+    <!-- Post Header -->
+    <header class="section" style="padding-top: 150px; text-align: center;">
         <div class="container">
-            <a href="services.html"
-                style="color: var(--color-subtext); margin-bottom: 1rem; display: inline-block;">&larr; Back to
-                Services</a>
-            <h1 class="fade-up" id="service-title">Personal Shopping Experience</h1>
-            <p class="fade-up delay-100" id="service-subtitle" style="font-size: 1.25rem; max-width: 700px;">
-                Rediscover the joy of dressing up without the stress of shopping. We curate the perfect pieces for you.
-            </p>
+            <a href="blog.html" style="color: var(--color-subtext); margin-bottom: 1rem; display: inline-block;">&larr;
+                Back to Journal</a>
+            <span
+                style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); margin-top: 1rem;">Tips</span>
+            <h1 class="fade-up" style="max-width: 800px; margin: 1rem auto;">Mastering Color Theory</h1>
+            <div style="color: var(--color-subtext); margin-top: 1rem;">
+                <span>By Sarah Jenkins</span> &bull; <span>Nov 05, 2025</span>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <section class="section">
+    <!-- Post Content -->
+    <article class="section" style="padding-top: 0;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-7 fade-up delay-200">
-                    <img id="service-image"
-                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                        alt="Shopping Experience" style="width: 100%; border-radius: 4px; margin-bottom: 2rem;">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                        alt="Color Theory" style="width: 100%; border-radius: 4px; margin-bottom: 3rem;"
+                        class="fade-up delay-100">
 
-                    <h3>About this Service</h3>
-                    <p id="service-about">Our Personal Shopping service is designed for individuals who want to look
-                        their best but lack
-                        the time or inclination to shop. Whether you need a complete wardrobe overhaul or a few key
-                        pieces for the season, we handle everything from pre-selection to fitting.</p>
+                    <div class="blog-content fade-up delay-200">
+                        <p style="font-size: 1.125rem; margin-bottom: 2rem;">Color is one of the most powerful tools in
+                            styling. Understanding how to mix and match colors can elevate your look from ordinary to
+                            exceptional.</p>
 
-                    <h3 style="margin-top: 2rem;">What's Included</h3>
-                    <ul id="service-included" style="list-style: none; padding-left: 0; margin-top: 1rem;">
-                        <!-- Items populated by JS -->
-                    </ul>
-                </div>
+                        <h2 style="font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem;">The Color Wheel</h2>
+                        <p>Begin by understanding complementary colors—those opposite each other on the wheel. Think
+                            navy and camel, or burgundy and forest green. These combinations create a balanced,
+                            high-contrast look that always feels polished.</p>
 
-                <div class="col-md-1"></div>
+                        <h2 style="font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem;">Monochrome Magic</h2>
+                        <p>Dressing in various shades of the same color is a foolproof way to look taller and more
+                            sophisticated. The trick is to mix textures—pair a wool sweater with silk trousers in the
+                            same tonal family to add depth.</p>
 
-                <div class="col-md-4 fade-up delay-300">
-                    <div class="bg-surface shadow-soft"
-                        style="padding: 2rem; border: 1px solid var(--color-border); position: sticky; top: 120px;">
-                        <h4 style="margin-bottom: 1.5rem;">Book This Service</h4>
-                        <div id="service-price"
-                            style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 1.5rem;">$499
-                            <span style="font-size: 1rem; color: var(--color-subtext); font-family: var(--font-body);">/
-                                session</span>
+                        <blockquote
+                            style="border-left: 4px solid var(--color-accent); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; font-size: 1.25rem; font-family: var(--font-heading);">
+                            "Colors, like features, follow the changes of the emotions."
+                        </blockquote>
+
+                        <h2 style="font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem;">Understanding Undertones
+                        </h2>
+                        <p>Are you warm or cool? Choosing colors that match your skin's natural undertone is the
+                            difference between looking radiant and looking washed out. Warm undertones shine in earthy
+                            colors, while cool undertones pop in jewel tones.</p>
+
+                        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+                            <span>Share this article:</span>
+                            <div style="display: inline-flex; gap: 1rem; margin-left: 1rem;">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                            </div>
                         </div>
-                        <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center;">Inquire
-                            Now</a>
-                        <p
-                            style="font-size: 0.85rem; color: var(--color-subtext); margin-top: 1rem; text-align: center;">
-                            Questions? <a href="contact.html" style="text-decoration: underline;">Contact us</a> first.
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </article>
 
     <!-- Footer -->
     <footer class="footer">
@@ -166,15 +170,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/animations.js"></script>
-    <script src="assets/js/services.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.initServiceDetails) {
-                window.initServiceDetails();
-            }
-        });
-    </script>
 </body>
 
 </html>

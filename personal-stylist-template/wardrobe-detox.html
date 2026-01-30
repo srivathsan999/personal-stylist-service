@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANTIGRAVITY | Service Details</title>
+    <title>ANTIGRAVITY | Wardrobe Detox</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -13,12 +13,10 @@
     <link rel="stylesheet" href="assets/css/dark.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar glass">
         <div class="container nav-container">
@@ -40,6 +38,10 @@
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li class="mobile-nav-buttons">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </li>
             </ul>
             <div class="nav-right">
                 <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
@@ -56,9 +58,10 @@
             <a href="services.html"
                 style="color: var(--color-subtext); margin-bottom: 1rem; display: inline-block;">&larr; Back to
                 Services</a>
-            <h1 class="fade-up" id="service-title">Personal Shopping Experience</h1>
-            <p class="fade-up delay-100" id="service-subtitle" style="font-size: 1.25rem; max-width: 700px;">
-                Rediscover the joy of dressing up without the stress of shopping. We curate the perfect pieces for you.
+            <h1 class="fade-up">Wardrobe Detox & Audit</h1>
+            <p class="fade-up delay-100" style="font-size: 1.25rem; max-width: 700px;">
+                Streamline your closet by removing items that no longer serve you and organizing what remains for
+                maximum efficiency.
             </p>
         </div>
     </header>
@@ -68,19 +71,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 fade-up delay-200">
-                    <img id="service-image"
-                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                        alt="Shopping Experience" style="width: 100%; border-radius: 4px; margin-bottom: 2rem;">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                        alt="Wardrobe Detox" style="width: 100%; border-radius: 4px; margin-bottom: 2rem;">
 
                     <h3>About this Service</h3>
-                    <p id="service-about">Our Personal Shopping service is designed for individuals who want to look
-                        their best but lack
-                        the time or inclination to shop. Whether you need a complete wardrobe overhaul or a few key
-                        pieces for the season, we handle everything from pre-selection to fitting.</p>
+                    <p>A closet full of clothes but nothing to wear? Our Wardrobe Detox helps you clear the clutter and
+                        rediscover lost favorites. We audit every item in your wardrobe, deciding what to keep, tailor,
+                        donate, or sell.</p>
+                    <p>We then organize your space so you can get dressed effortlessly every morning. It's not just
+                        about cleaning; it's about curating a functional collection that works for your current life.
+                    </p>
 
                     <h3 style="margin-top: 2rem;">What's Included</h3>
-                    <ul id="service-included" style="list-style: none; padding-left: 0; margin-top: 1rem;">
-                        <!-- Items populated by JS -->
+                    <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-accent"
+                                style="margin-right: 0.5rem;"></i> 3-Hour In-Home Wardrobe Audit</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-accent"
+                                style="margin-right: 0.5rem;"></i> Keep/Tailor/Donate/Sell Categorization</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-accent"
+                                style="margin-right: 0.5rem;"></i> New Outfit Combinations using Current Clothes</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-accent"
+                                style="margin-right: 0.5rem;"></i> Identification of Wardrobe "Gaps"</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check text-accent"
+                                style="margin-right: 0.5rem;"></i> Custom Closet Organization Plan</li>
                     </ul>
                 </div>
 
@@ -90,8 +103,7 @@
                     <div class="bg-surface shadow-soft"
                         style="padding: 2rem; border: 1px solid var(--color-border); position: sticky; top: 120px;">
                         <h4 style="margin-bottom: 1.5rem;">Book This Service</h4>
-                        <div id="service-price"
-                            style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 1.5rem;">$499
+                        <div style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 1.5rem;">$399
                             <span style="font-size: 1rem; color: var(--color-subtext); font-family: var(--font-body);">/
                                 session</span>
                         </div>
@@ -124,10 +136,10 @@
                 <div class="col-md-2">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="services.html">Personal Shopping</a></li>
-                        <li><a href="services.html">Wardrobe Detox</a></li>
-                        <li><a href="services.html">Event Styling</a></li>
-                        <li><a href="services.html">Corporate Image</a></li>
+                        <li><a href="personal-shopping.html">Personal Shopping</a></li>
+                        <li><a href="wardrobe-detox.html">Wardrobe Detox</a></li>
+                        <li><a href="event-styling.html">Event Styling</a></li>
+                        <li><a href="corporate-image.html">Corporate Image</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2">
@@ -166,15 +178,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/animations.js"></script>
-    <script src="assets/js/services.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.initServiceDetails) {
-                window.initServiceDetails();
-            }
-        });
-    </script>
 </body>
 
 </html>
