@@ -60,3 +60,7 @@
     background-color: var(--color-primary);
     color: #0B0D12;
 }
+
+[data-theme="dark"] .brand-logo-img {
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
+}

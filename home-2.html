@@ -292,14 +292,30 @@
         }
 
         /* Responsive */
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
 
+            .hero-text {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
             .hero-text h1 {
                 font-size: 3rem;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
             }
 
             .hero-image-grid {
@@ -312,6 +328,7 @@
             }
 
             .hero-stats {
+                justify-content: center;
                 gap: 2rem;
             }
 
@@ -330,7 +347,7 @@
 
             .hero-stats {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
         }
 
@@ -783,7 +800,7 @@
                 <div class="col-md-3 col-6" style="padding: 0.5rem;">
                     <div
                         style="position: relative; overflow: hidden; padding-bottom: 100%; background: var(--color-bg);">
-                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea3c6e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                             alt="Instagram Post"
                             style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
                     </div>
@@ -886,7 +903,7 @@
                     <form style="display: flex; gap: 0.5rem;">
                         <input type="email" placeholder="Your email"
                             style="padding: 0.75rem; border: 1px solid #333; background: #151A25; color: #fff; flex: 1; border-radius: 4px;">
-                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1rem;">Sub</button>
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1rem;">Subscribe</button>
                     </form>
                     <div style="margin-top: 2rem; display: flex; gap: 1rem;">
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -897,7 +914,7 @@
             </div>
             <div
                 style="border-top: 1px solid #1F2937; margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: #6B7280; font-size: 0.85rem;">
-                &copy; 2025 Antigravity Stylist Template. All rights reserved.
+                &copy; 2026 Antigravity Stylist Template. All rights reserved.
             </div>
         </div>
     </footer>
